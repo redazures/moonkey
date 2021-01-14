@@ -17,23 +17,23 @@ import { ListItem, Avatar } from 'react-native-elements'
 const list = [
   {
     name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Keeshond_Sibirian_Husky_crossbreed_puppy.jpg',
     subtitle: 'Vice President'
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Keeshond_Sibirian_Husky_crossbreed_puppy.jpg',
     subtitle: 'Vice Chairman'
   },
 ]
 
 const App: () => React$Node = () => {
   return (
-    <View>
+    <SafeAreaView>
       {
         list.map((l, i) => (
-          <ListItem key={i} bottomDivider>
-            <Avatar source={{uri: l.avatar_url}} />
+          <ListItem key={i} bottomDivider >
+            <Avatar source={{uri: l.avatar_url}}/>
             <ListItem.Content>
               <ListItem.Title>{l.name}</ListItem.Title>
               <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
@@ -41,10 +41,14 @@ const App: () => React$Node = () => {
           </ListItem>
         ))
       }
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default App;
 
-
+const styles = StyleSheet.create({
+  avatar:{
+    backgroundColor:'pink',
+  },
+})
